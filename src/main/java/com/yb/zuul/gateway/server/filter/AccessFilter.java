@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * -------------------网关这里做的过滤并不能很好的处理访问的开放的问题,例如登录页面的放开,这里就没法弄,
+ * -------------------网关必须要使用web
  * Description:自定义过滤器,仅仅只需继承抽象类ZuulFilter,实现/重写其方法即可
  * author biaoyang
  * date 2019/4/3 000319:52

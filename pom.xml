@@ -30,6 +30,11 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
         </dependency>
+        <!--网关的安全依赖(这里先直接用spring boot的security,不用spring cloud的OAuth2)-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <!--springboot测试依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
