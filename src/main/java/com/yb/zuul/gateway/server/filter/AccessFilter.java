@@ -3,7 +3,7 @@ package com.yb.zuul.gateway.server.filter;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.netflix.zuul.exception.ZuulException;
-import org.springframework.http.HttpStatus;
+import org.apache.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 
@@ -94,7 +94,7 @@ public class AccessFilter extends ZuulFilter {
             //这里根之前使用的那个AuthorizationEntryPoint的实现类返回的信息差不多的
             ctx.setSendZuulResponse(false);
             //设置响应码
-            ctx.setResponseStatusCode(HttpStatus.UNAUTHORIZED.value());//401
+            ctx.setResponseStatusCode(HttpStatus.SC_UNAUTHORIZED);//401
             //让浏览器用utf8来解析返回的数据,需要和下面的setCharacterEncoding的编码保持一致
             ctx.addZuulResponseHeader("Content-type", "text/html;charset=UTF-8");
             //告诉servlet用UTF-8转码，而不是用默认的ISO8859-1,这个需要在写中文前设置
