@@ -19,7 +19,7 @@ public class GatewayWebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         //这里仅仅只是很简略的配置了一下,其中/login和/index没有,并且放开actuator的监控的资源
         http.httpBasic().disable().csrf().disable();
-        http.authorizeRequests().antMatchers("/actuator/**").permitAll()
+        http.authorizeRequests().antMatchers("/actuator/info","/actuator/health").permitAll()
                 //记得这里需要对其他的路径开启安全认证
                 .anyRequest().authenticated().and()
                 .formLogin().loginPage("/login").successForwardUrl("/index").and()

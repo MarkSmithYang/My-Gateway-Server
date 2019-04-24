@@ -17,7 +17,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8080/eureka-server/eureka/
+      defaultZone: http://eureka.didispace.com/eureka/
 
 #网关路由配置
 zuul:
@@ -46,5 +46,5 @@ zuul:
       #实测如下也是可以的,只是网上说的是serviceId用微服务名,url用服务的访问地址(http://host:port/)
       #url: producer-service
       #实测下面的这种方式也是可以的,只是不认localhost
-      #url: http://192.168.2.233:9001/
+      #url: http://192.168.2.xxx:9001/
 
